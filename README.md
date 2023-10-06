@@ -1,5 +1,5 @@
 # Telego-questions
-## This package was created to make handle users answers on questions easier
+## This package provides a question middlewares that helps to handle users answers on questions
 
 ### Usage:
 ```go
