@@ -85,7 +85,7 @@ func main() {
 				log.Println("question chan was closed")
 				
 				return 
-            }
+			}
 			
 			smp.WithText(fmt.Sprintf(result, userNameResponse.Text, userAgeResponse.Text))
 
