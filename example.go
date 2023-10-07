@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	botToken := "6095252527:AAEpAipyOZFdCF4B64zRCFvzhd_dG7Jc4g0"
+	botToken := os.Getenv("TOKEN_HERE")
 
 	ctx := context.Background()
 
