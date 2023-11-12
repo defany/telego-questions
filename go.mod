@@ -1,4 +1,4 @@
-module telego-questions
+module github.com/DeFaNy/telego-questions
 
 go 1.21
 
