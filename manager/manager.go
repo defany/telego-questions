@@ -19,7 +19,7 @@ type Answer func() (telego.Message, bool)
 
 type questions[T telego.Message | telego.CallbackQuery] map[int64]map[int64]chan T
 
-type callback func(ctx context.Context, bot *telego.Bot, answer Answer)
+type Callback func(ctx context.Context, bot *telego.Bot, answer Answer)
 
 type QuestionManager struct {
 	mu                sync.Mutex
@@ -81,7 +81,7 @@ func (q *QuestionManager) Middleware(bot *telego.Bot, update telego.Update, next
 // NewQuestion
 // This function create a new question from telego.Message
 // If message.From == nil it will return ErrInvalidQuestionMessage
-func (q *QuestionManager) NewQuestion(bot *telego.Bot, message telego.Message, callback callback) error {
+func (q *QuestionManager) NewQuestion(bot *telego.Bot, message telego.Message, callback Callback) error {
 	if message.From == nil {
 		return ErrInvalidQuestionMessage
 	}
@@ -118,7 +118,7 @@ func (q *QuestionManager) NewQuestion(bot *telego.Bot, message telego.Message, c
 // NewCallbackQuestion
 // This function create a new question from telego.CallbackQuery
 // If message.Message == nil it will return ErrInvalidQuestionMessage
-func (q *QuestionManager) NewCallbackQuestion(bot *telego.Bot, message telego.CallbackQuery, callback callback) error {
+func (q *QuestionManager) NewCallbackQuestion(bot *telego.Bot, message telego.CallbackQuery, callback Callback) error {
 	if message.Message == nil {
 		return ErrInvalidQuestionMessage
 	}
