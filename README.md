@@ -13,7 +13,7 @@ import (
 	tu "github.com/mymmrac/telego/telegoutil"
 	"log"
 	"os"
-	qnmanager "telego-questions/manager"
+	qnmanager "github.com/DeFaNy/telego-questions/manager"
 )
 
 func main() {
